@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Head>
         <title>Decartes Web 3</title>
-        {/*<link rel="icon" href="/favicon.ico" />*/}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Intro />
