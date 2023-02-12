@@ -33,10 +33,10 @@ export const Intro: React.FC = () => {
             <div className="container">
                 <h3>Projects</h3>
                 <p>
-                    Bootstrappers will receive tokens for the first project, which will be a limit order book dex aggregator. Mainly it will allow users to place limit orders on Orca Whirlpools but I might include Raydium concentrated liquidity too.
+                    {`Bootstrappers will receive tokens for the first project, which will be a limit order book dex aggregator. Mainly it will allow users to place limit orders on Orca Whirlpools but I might include Raydium concentrated liquidity too.
                     I do plan on having some kind of Web 3 Labs group which has a token that extracts value from all the Labs' child projects,
                     but the details on this aren't clear to me yet. Bootstrapers will be given a way to gain ownership in this meta project as well as the initial project.
-                    Here are my planned projects (in no particular order):
+                    Here are my planned projects (in no particular order):`}
                 </p>
                 <ul>
                     <li>On-chain limit order book aggregating concetrated liquidity dexes: delimit.sol</li>
@@ -52,7 +52,7 @@ export const Intro: React.FC = () => {
                 </p>
                 <ul>{COMMON_TOKENOMICS.map((v, i) => <li key={i}>{v}</li>)}</ul>
                 <p>
-                    These tokenomics are not finalized. I'm sharing it here moreso to give bootstrappers and idea of my general approach to fundraising, value capture, and allocation.
+                    {`These tokenomics are not finalized. I'm sharing it here moreso to give bootstrappers and idea of my general approach to fundraising, value capture, and allocation.`}
                 </p>
             </div>
             <div className="container">

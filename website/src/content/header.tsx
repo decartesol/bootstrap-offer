@@ -16,11 +16,11 @@ export const Header: React.FC = () => {
                     <h1>Bootstrap <AddyLink address={ADDRESS_PUBKEY} showDomain={true} /> <a className='fa fa-twitter' href={TWITTER_URL}></a></h1>
                     <h2>
                         Greetings. I am a SWE with over a decade of programming & system design experience.<br />
-                        Over the next few years I'll be starting various web 3 projects.<br />
+                        {`Over the next few years I'll be starting various web 3 projects.`}<br />
                         I want to start these projects under a pseudonym with no traces back to my real identity.<br />
-                        So, to remain anonymous, I'm asking you to help bootstrap my wallet in exchange for some pre-ICO tokens of my first project.<br /> 
-                        I'm collecting {FOR_SOL} SOL in exchange for {PERCENT_GIVEAWAY * 100}% ({TOTAL_SUPPLY * PERCENT_GIVEAWAY}) of the total supply of the first project's tokens.<br />
-                        For my first project, I'll be building a DeCLOB on top of Orca Whirlpools.<br />
+                        {`So, to remain anonymous, I'm asking you to help bootstrap my wallet in exchange for some pre-ICO tokens of my first project.`}<br /> 
+                        {`I'm collecting ${FOR_SOL} SOL in exchange for ${PERCENT_GIVEAWAY * 100}% (${TOTAL_SUPPLY * PERCENT_GIVEAWAY}) of the total supply of the first project's tokens`}.<br />
+                        {`For my first project, I'll be building a DeCLOB on top of Orca Whirlpools.`}<br />
                         Orca is winning the liquidity competition while Open Book is hardly innovating, leaving an opening for a product such as this.<br />
                         What will set this product apart is a high class real-time order book UX available both for desktop browsers and Solana mobile.
                     </h2>
