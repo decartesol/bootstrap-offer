@@ -1,5 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import nextConfig from '../../next.config';
+import * as consts from '@/utils/constants';
+
+console.log(`consts of ${JSON.stringify(consts)}`);
+console.log(`process env`, process.env);
 
 export default function Document() {
   return (
