@@ -22,7 +22,8 @@ small {
   background-color: #ffffff;
   background-image: url("building.jpeg");
   background-position: center;
-  background-size: cover;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
 }
 
 header {
