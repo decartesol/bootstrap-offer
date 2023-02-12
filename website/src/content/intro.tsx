@@ -52,7 +52,7 @@ export const Intro: React.FC = () => {
                 </p>
                 <ul>{COMMON_TOKENOMICS.map((v, i) => <li key={i}>{v}</li>)}</ul>
                 <p>
-                    {`These tokenomics are not finalized. I'm sharing it here moreso to give bootstrappers and idea of my general approach to fundraising, value capture, and allocation.`}
+                    {`These tokenomics are not finalized. What I am sharing here is a working draft to give bootstrappers an idea of my general approach to fundraising, value capture, and allocation.`}
                 </p>
             </div>
             <div className="container">
