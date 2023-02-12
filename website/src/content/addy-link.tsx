@@ -28,7 +28,8 @@ export const AddyLink: React.FC<{address: PublicKey, showDomain?: boolean}> = ({
                 }
                 // https://solana.stackexchange.com/questions/190/how-to-get-the-domain-name-for-a-public-key
                 try {
-                    const {domain, reverse} = await getFavoriteDomain(RPC, address);
+                    const addressFromStr = new PublicKey(addyStr);
+                    const {domain, reverse} = await getFavoriteDomain(RPC, addressFromStr);
                     console.log(`domain name for ${addyStr} is`, reverse);
                     if (reverse) {
                         const fetchedDomain = `${reverse}.sol`
@@ -36,12 +37,13 @@ export const AddyLink: React.FC<{address: PublicKey, showDomain?: boolean}> = ({
                         updateCache(fetchedDomain);
                     }
                 } catch (e) {
-                    if (e.message === 'Favourite domain not found') {
+                    const error: Error = e as any;
+                    if (error.message === 'Favourite domain not found') {
                         updateCache(addyStr);
                     } else {
                         console.log(`error is unknown`);
-                        console.log(e.message);
-                        console.log(e);
+                        console.log(error.message);
+                        console.log(error);
                     }
                 }
             })();
