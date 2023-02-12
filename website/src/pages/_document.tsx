@@ -3,7 +3,8 @@ import nextConfig from '../../next.config';
 import * as consts from '@/utils/constants';
 
 console.log(`consts of ${JSON.stringify(consts)}`);
-console.log(`process env`, process.env);
+console.log(`process env DEV_HELIUS_API_KEY`, process.env['DEV_HELIUS_API_KEY']);
+console.log(`process env NEXT_PUBLIC_HELIUS_KEY`, process.env['NEXT_PUBLIC_HELIUS_KEY']);
 
 export default function Document() {
   return (

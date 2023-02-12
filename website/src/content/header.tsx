@@ -2,6 +2,7 @@ import { ADDRESS_PUBKEY, TWITTER_URL } from '@/utils/constants';
 import * as React from 'react';
 import { AddyLink } from './addy-link';
 import { FOR_SOL, PERCENT_GIVEAWAY, TOTAL_SUPPLY } from './calculator';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 const MIN_SEND = .1;
 const MAX_SEND = 5;
@@ -25,6 +26,9 @@ export const Header: React.FC = () => {
                         What will set this product apart is a high class real-time order book UX available both for desktop browsers and Solana mobile.
                     </h2>
                 </hgroup>
+                <section className='container' style={{backgroundColor: 'none', margin: '0 auto', maxWidth: 550}}>
+                    <TwitterTweetEmbed tweetId='1623764669159833601' />
+                </section>
                 <article data-theme="light">
                     <form className="grid">
                         <label htmlFor='send'>
