@@ -1,1 +1,6 @@
-export const endpoint = "https://rpc.helius.xyz/?api-key=fc832bab-1f00-4508-b9a8-4ee9c6a1a552";
+import { HELIUS_KEY } from '@/utils/constants';
+import { Connection, Commitment, PublicKey } from '@solana/web3.js';
+
+const endpoint = `https://rpc.helius.xyz/?api-key=${HELIUS_KEY}`;
+const dataCommitment: Commitment = 'confirmed';
+export const RPC = new Connection(endpoint, dataCommitment);

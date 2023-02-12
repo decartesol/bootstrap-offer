@@ -1,0 +1,103 @@
+/* Global CSS variables */
+:root {
+  --spacing-company: 3rem;
+  --font-weight: 400;
+  --border-radius: 0;
+  --typography-spacing-vertical: 7px !important;
+}
+
+/* Typography */
+h2,
+h3,
+hgroup > :last-child {
+  font-weight: 200;
+}
+
+small {
+  color: var(--muted-color);
+}
+
+/* Header */
+.hero {
+  background-color: #ffffff;
+  background-image: url("building.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  padding: var(--spacing-company) 0;
+}
+
+header hgroup > :last-child {
+  color: var(--h3-color);
+}
+
+header hgroup {
+  margin-bottom: var(--spacing-company);
+  /* background-color: rgba(57,64,70,.6); */
+  background-color: rgba(40, 45, 49, .9);
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}
+
+div.container:nth-child(even) {
+  background-color: #d9d9db;
+}
+
+div.container {
+  padding: 15px;
+}
+
+h3 {
+  margin-bottom: 7px !important;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: underline;
+}
+
+a.fa {
+  text-decoration: none !important;
+}
+
+.fa-twitter {
+  color: #1c9dee;
+}
+
+article {
+  background-color: rgba(255,255,255,.8) !important;
+}
+
+article input {
+  font-weight: bold;
+}
+
+/* Nav */
+summary[role="link"].contrast:is([aria-current],:hover,:active,:focus) {
+  background-color: transparent;
+  color: var(--contrast-hover);
+}
+
+/* Main */
+@media (min-width: 992px) {
+  main .grid {
+    grid-column-gap: var(--spacing-company);
+    grid-template-columns: auto 25%;
+  }
+}
+
+form.grid {
+  grid-row-gap: 0;
+}
+
+/* Aside nav */
+aside img {
+  margin-bottom: 0.25rem;
+}
+
+aside p {
+  margin-bottom: var(--spacing-company);
+  line-height: 1.25;
+}
