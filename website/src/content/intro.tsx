@@ -4,6 +4,7 @@ import { ADDRESS_PUBKEY, TWITER_HANDLE, TWITTER_URL } from '@/utils/constants';
 import { useSolReceived } from '@/hooks/useSolReceived';
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
 import { FOR_SOL, PERCENT_GIVEAWAY, TOTAL_SUPPLY } from './calculator';
+import { Disclaimer } from './disclaimer';
 
 const COMMON_TOKENOMICS = [
     `21 million max supply`,
@@ -29,6 +30,7 @@ export const Intro: React.FC = () => {
                     <b>DO NOT send me very much SOL!</b> {`I would much prefer many people get involved in this project so I can ask you all questions on twitter to help guide product development. 
                     Let us maximize the community size (to speed up development and organic marketing) while minimizing any one individual's exposure in case the project fails for some reason.`}
                 </p>
+                <Disclaimer />
             </div>
             <div className="container">
                 <h3>Projects</h3>

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Decartes Web 3</title>
+        <title>decartes.sol</title>
         <link rel="icon" href={`${basePath}/favicon.ico`} />
       </Head>
       <Header />

@@ -102,3 +102,13 @@ aside p {
   margin-bottom: var(--spacing-company);
   line-height: 1.25;
 }
+
+button.secondary {
+  cursor: initial !important;
+  opacity: 0.5;
+}
+
+button.secondary:hover {
+  border-color: var(--secondary) !important;
+  background-color: var(--secondary) !important;
+}

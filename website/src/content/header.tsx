@@ -3,13 +3,18 @@ import * as React from 'react';
 import { AddyLink } from './addy-link';
 import { FOR_SOL, PERCENT_GIVEAWAY, TOTAL_SUPPLY } from './calculator';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
+import { Disclaimer } from './disclaimer';
+import { ConnectToWallet } from './connect';
+import { PublicKey } from '@solana/web3.js';
 
 const MIN_SEND = .1;
 const MAX_SEND = 5;
 
 export const Header: React.FC = () => {
     const [send, setSend] = React.useState(1);
+    const [connectedAs, setConnectedAs] = React.useState<undefined | PublicKey>(undefined);
     const receive = Math.round((send / FOR_SOL) * (PERCENT_GIVEAWAY * TOTAL_SUPPLY) * 100) / 100;
+    const [connectOpen, setConnectOpen] = React.useState(false);
     return (
         <div className="hero" data-theme="dark">
             <header className="container">
@@ -46,8 +51,19 @@ export const Header: React.FC = () => {
                             Receive DLMT:
                             <input value={receive} readOnly/>
                         </label>
-                        <button type="submit" onClick={e => { e.preventDefault(); }}>Connect Wallet</button>
+                        {connectedAs === undefined ?
+                            <button type="submit" onClick={e => { e.preventDefault(); setConnectOpen(true); }}>Connect Wallet</button>
+                            :
+                            <div>
+                                <div>Connected as {connectedAs.toBase58()}</div>
+                                <button type="submit" onClick={e => { e.preventDefault(); setConnectedAs(undefined); }}>
+                                    Disconnect
+                                </button>
+                            </div>
+                        }
+                        <ConnectToWallet onClose={() => { setConnectOpen(false); }} open={connectOpen} onConnect={as => { setConnectedAs(as) }} />
                     </form>
+                    <Disclaimer />
                 </article>
             </header>
         </div>
