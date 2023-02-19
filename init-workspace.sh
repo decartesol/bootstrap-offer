@@ -8,6 +8,7 @@ cargo install spl-token-cli
 sudo apt-get -y install tmux
 npm i -g pnpm
 pnpm i
+ln -s ./git-hooks/pre-commit ./.git/hooks/pre-commit
 node init-solana.js
 pnpm --filter "website" dev
 # run the following until we get a hit
