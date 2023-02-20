@@ -27,15 +27,15 @@ export const Intro: React.FC = () => {
                     There will be future raises but probably at a much higher market cap once the project is actually live.`}
                 </p>
                 <p>
-                    <b>DO NOT send me very much SOL!</b> {`I would much prefer many people get involved in this project so I can ask you all questions on twitter to help guide product development. 
-                    Let us maximize the community size (to speed up development and organic marketing) while minimizing any one individual's exposure in case the project fails for some reason.`}
+                    <b>DO NOT send me very much SOL!</b> {`I would much prefer many people get involved in this project so I can ask you all questions on `}<a href={TWITTER_URL}>twitter</a>{` to help guide product development. 
+                    Let us maximize the community size (to speed up development and organic marketing) while minimizing any one individual's exposure in case the project fails.`}
                 </p>
                 <Disclaimer />
             </div>
             <div className="container">
                 <h3>Projects</h3>
                 <p>
-                    {`Bootstrappers will receive tokens for the first project, which will be a limit order book dex aggregator. Mainly it will allow users to place limit orders on Orca Whirlpools but I might include Raydium concentrated liquidity too.
+                    {`Bootstrappers will receive DLMT tokens for the first project (delimit.sol), which will be a limit order book dex aggregator. Mainly it will allow users to place limit orders on Orca Whirlpools but I might include Raydium concentrated liquidity too.
                     I do plan on having some kind of Web 3 Labs group which has a token that extracts value from all the Labs' child projects,
                     but the details on this aren't clear to me yet. Bootstrapers will be given a way to gain ownership in this meta project as well as the initial project.
                     Here are my planned projects (in no particular order):`}
@@ -43,7 +43,7 @@ export const Intro: React.FC = () => {
                 <ul>
                     <li>On-chain limit order book aggregating concetrated liquidity dexes: delimit.sol</li>
                     <li>Solana-based gitopia competitor: degit.sol</li>
-                    <li>Web 3 persistent world mmorts game: imagine age of empires + factorio + evony</li>
+                    <li>Web 3 persistent world mmorts game (imagine age of empires + factorio + evony): demesne.sol</li>
                     <li>On-chain ETFs and NFT funds (web 3 REITs), controlled by DAO and/or algorithmically (BlackRock, Vanguard competitor)</li>
                 </ul>
             </div>
