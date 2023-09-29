@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "set-key": "echo \"NEXT_PUBLIC_HELIUS_KEY=$DEV_HELIUS_API_KEY\" > .env",
-    "dev": "pnpm set-key && next dev",
+    "dev": "pnpm set-key && pnpm next dev",
     "build": "pnpm set-key && next build",
     "start": "next start",
     "lint": "next lint",

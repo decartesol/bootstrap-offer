@@ -69,6 +69,7 @@ export const Header: React.FC = () => {
                 </hgroup>
                 <section className='container' style={{backgroundColor: 'none', margin: '0 auto', maxWidth: 550}}>
                     <TwitterTweetEmbed tweetId='1623764669159833601' />
+                    <TwitterTweetEmbed tweetId='1706721392190710158' />
                 </section>
                 <article data-theme="light">
                     <form className="grid">
