@@ -7,3 +7,4 @@ export const ADDRESS_PUBKEY = new PublicKey(ADDRESS_STRING);
 export const TWITER_HANDLE = 'decartesol';
 export const TWITTER_URL = `https://twitter.com/${TWITER_HANDLE}`;
 export const BASE_PATH = basePath;
+export const GITHUB_URL = 'https://github.com/devise-labs/monorepo';

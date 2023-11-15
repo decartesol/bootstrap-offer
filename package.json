@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "@solana/web3.js": "^1.73.0",
+        "@solana/web3.js": "^1.87.6",
         "bs58": "^5.0.0",
         "yaml": "^2.2.1"
     }

@@ -64,7 +64,9 @@ export const Header: React.FC = () => {
                         {`I'm collecting ${FOR_SOL} SOL in exchange for ${PERCENT_GIVEAWAY * 100}% (${TOTAL_SUPPLY * PERCENT_GIVEAWAY}) of the total supply of the first project's tokens`}.<br />
                         {`For my first project, I'll be building a DeCLOB on top of Orca Whirlpools: an app which allows user to set limit orders using Orca concentrated liquidity positions with the smallest possible price range.`}<br />
                         {`Orca is winning the liquidity competition over both Open Book and Raydium while Open Book is stuggling to gain momentum and lacks a user friendly UI, leaving an opening for the product I'm building.`}<br />
-                        What will set this product apart is a high quality real-time order book UX available both for desktop browsers and Solana mobile.
+                        What will set this product apart from Open Book & Radium is a high quality real-time order book UX available both for desktop browsers and Solana mobile.<br />
+                        What will set this apart from up and comers like Phoenix is there will be much deeper liquidity and markets due to being build on top of Orca.<br />
+                        If the initial use-case of this product is a success, I plan to extend the product suite to include a limit order book and perpetual futures aggregator.
                     </h2>
                 </hgroup>
                 <section className='container' style={{backgroundColor: 'none', margin: '0 auto', maxWidth: 550}}>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AddyLink } from './addy-link';
-import { ADDRESS_PUBKEY, TWITER_HANDLE, TWITTER_URL } from '@/utils/constants';
+import { ADDRESS_PUBKEY, TWITER_HANDLE, TWITTER_URL, GITHUB_URL } from '@/utils/constants';
 import { useSolReceived } from '@/hooks/useSolReceived';
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
 import { FOR_SOL, PERCENT_GIVEAWAY, TOTAL_SUPPLY } from './calculator';
@@ -74,6 +74,12 @@ export const Intro: React.FC = () => {
                 <h3>Got Questions/Feedback?</h3>
                 <p>
                     {`Follow my twitter for updates, questions, comments, and suggestions:`} <a href={TWITTER_URL}>@{TWITER_HANDLE}</a>
+                </p>
+            </div>
+            <div className="container">
+                <h3>Contribute</h3>
+                <p>
+                    I'm building open source here <a href={GITHUB_URL}>{GITHUB_URL}</a>
                 </p>
             </div>
         </>

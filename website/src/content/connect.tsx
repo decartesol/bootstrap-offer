@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 import { BASE_PATH, ADDRESS_PUBKEY } from '@/utils/constants';
-import { PublicKey, Transaction } from '@solana/web3.js';
+import { PublicKey, Transaction, TransactionMessage, VersionedTransaction } from '@solana/web3.js';
 import bs58 from 'bs58';
 import { RPC } from './endpoint';
 
@@ -158,22 +158,22 @@ export const ConnectToWallet: React.FC<ConnectToWalletProps> = ({onClose, open, 
             const provider = PHANTOM.solana;
             const {publicKey} = await provider.connect();
             const recent = await RPC.getLatestBlockhash();
-            tx.recentBlockhash = recent.blockhash;
-            tx.feePayer = publicKey;
-            const {publicKey: pk, signature: sig}: {publicKey: string, signature: string} = await provider.request({
-                method: "signTransaction",
-                params: {
-                    message: bs58.encode(tx.serializeMessage()),
-                },
-            });
+            // https://docs.phantom.app/solana/sending-a-transaction-1
+            const txMsg = new TransactionMessage({
+                payerKey: publicKey,
+                recentBlockhash: recent.blockhash,
+                instructions: tx.instructions
+            }).compileToV0Message();
+            const versionedTx = new VersionedTransaction(txMsg);
+            type SignAndSendRes = {
+                publicKey: string;
+                signature: string;
+            }
+            const { publicKey: pk, signature: sig }: SignAndSendRes = await provider.signAndSendTransaction(versionedTx);
             console.log('got signed', pk, sig);
-            tx.addSignature(new PublicKey(pk), Buffer.from(bs58.decode(sig)));
-            const serialized = tx.serialize();
-            const signature = await RPC.sendRawTransaction(serialized);
-            console.log('sent tx sig', signature);
             const { blockhash, lastValidBlockHeight } = await RPC.getLatestBlockhash();
-            await RPC.confirmTransaction({blockhash, lastValidBlockHeight, signature});
-            return {success: true, sig: signature};
+            await RPC.confirmTransaction({blockhash, lastValidBlockHeight, signature: sig});
+            return {success: true, sig};
         } catch(e) {
             console.log('phantom send error', e);
             return {success: false, errorCode: SignAndSendErrorCode.UnknownError, errorMsg: (e as Error).message};
