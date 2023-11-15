@@ -32,7 +32,7 @@ async function getSolSent() {
     });
     console.log(`Loaded   metadata for ${Object.keys(cache).length} txs from cache`);
     console.log(`Fetching metadata for ${newSigs.length} txs: ${JSON.stringify(newSigs)}`);
-    const txsParsed = await RPC.getParsedTransactions(newSigs);
+    const txsParsed = await RPC.getParsedTransactions(newSigs, {maxSupportedTransactionVersion: 0});
     const transfersIn: Record<string, BN> = {};
     Object.entries(cache).forEach(([tx, cachedTransfers]) => {
         Object.entries(cachedTransfers).forEach(([sender, sent]) => {
